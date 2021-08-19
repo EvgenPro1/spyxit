@@ -1,6 +1,8 @@
 .App {
   text-align: center;
+overflow: hidden;
 }
+
 
 .App-logo {
   height: 40vmin;
@@ -42,6 +44,11 @@
   opacity: 0;
   text-transform: uppercase;
   transition: .5s;
+  margin: 0 auto;
+}
+
+.position-relative{
+  width: 100vw;
 }
 
 .my-word.show{
@@ -52,4 +59,14 @@
 
 .hovered:hover .my-word{
   opacity:1;
+}
+
+.hide-block{
+  width: 100vw;
+  height: 50vh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+border: 1px solid blue ;
+
 }

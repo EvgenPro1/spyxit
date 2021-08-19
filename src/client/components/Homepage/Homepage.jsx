@@ -40,7 +40,7 @@ export const Homepage = () => {
         <h1>player № {index+1} </h1>
         <div className='hovered p-3'>
             <h2 className=''>Click me to show</h2>
-            <h2 className='my-word'>{item}</h2>
+            <div className='position-relative d-flex justify-content-center'><h2 className='my-word position-absolute'>{item}</h2></div>
         </div>
         </>)
 
@@ -64,6 +64,7 @@ export const Homepage = () => {
             </div>
             <div className='btn btn-outline-warning m-5' onClick={()=>setShow(!show)}>Show the topic</div>
             {show && <h1 className='my-word show'>{word}</h1> }
+            <div className="hide-block d-flex justify-content-center align-items-center"><h1>Click here to hide the word</h1></div>
         </div>
     );
 };
