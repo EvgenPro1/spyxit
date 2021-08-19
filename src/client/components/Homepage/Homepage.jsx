@@ -35,7 +35,13 @@ export const Homepage = () => {
 
     if (spyIndex) tempArr[spyIndex] = 'You are a spy, beat them:)'
 
-    const pageArr = tempArr.map((item, index) => <><h1>player № {index+1}</h1><h2>{item}</h2></>)
+    const pageArr = tempArr.map((item, index) => <>
+        <h1>player № {index+1} </h1>
+        <div className='border-primary p-3'>
+            <h2 className=''>Click me to show or hide </h2>
+            <h2 className='my-word'>{item}</h2>
+        </div>
+        </>)
 
     return (
         <div className='d-flex flex-column align-items-center'>
@@ -53,6 +59,7 @@ export const Homepage = () => {
             <div className="flex-row justify-content-between">
                 <button className='btn btn-outline-primary m-5' onClick={() => setPage(page + 1)}>next Page</button>
                 <button className='btn btn-outline-danger m-5' onClick={handleReset}>Reset</button>
+
             </div>
         </div>
     );
