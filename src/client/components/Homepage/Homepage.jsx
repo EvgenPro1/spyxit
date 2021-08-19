@@ -58,7 +58,9 @@ export const Homepage = () => {
 
             }
             <div className="flex-row justify-content-between">
-                <button className='btn btn-outline-primary m-5' onClick={() => setPage(page + 1)}>next Page</button>
+                <button className='btn btn-outline-primary m-5' onClick={() => setTimeout(()=> {
+                    setPage(page + 1)
+                }, 1000)}>next Page</button>
                 <button className='btn btn-outline-danger m-5' onClick={handleReset}>Reset</button>
 
             </div>
