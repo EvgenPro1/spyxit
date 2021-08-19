@@ -13,6 +13,7 @@ export const Homepage = () => {
     const [page, setPage] = useState(0)
     const [spyIndex, setSpyIndex] = useState(0)
     const [show, setShow] = useState()
+    const [showPreloader, setShowPreloader] = useState(true)
 
     useEffect(()=>{
         setSpyIndex(getRandomIntInclusive(number))
@@ -33,6 +34,7 @@ export const Homepage = () => {
         setNumber('')
         setPage(0)
     }
+    const preloader = <div className=''>...loading</div>
 
     if (spyIndex) tempArr[spyIndex] = 'You are a spy, beat them:)'
 
@@ -40,6 +42,7 @@ export const Homepage = () => {
         <h1>player № {index+1} </h1>
         <div className='hovered p-3'>
             <h2 className=''>Click me to show</h2>
+            {showPreloader && preloader }
             <div className='position-relative d-flex justify-content-center'><h2 className='my-word position-absolute'>{item}</h2></div>
         </div>
         </>)
@@ -58,9 +61,14 @@ export const Homepage = () => {
 
             }
             <div className="flex-row justify-content-between">
-                <button className='btn btn-outline-primary m-5' onClick={() => setTimeout(()=> {
-                    setPage(page + 1)
-                }, 1000)}>next Page</button>
+                <button className='btn btn-outline-primary m-5' onClick={() => {
+                    setShowPreloader(true)
+                    return setTimeout(()=> {
+                        setShowPreloader(false)
+                        setPage(page + 1)
+                    }, 1000)
+                }}>next Page </button>
+
                 <button className='btn btn-outline-danger m-5' onClick={handleReset}>Reset</button>
 
             </div>
@@ -70,3 +78,9 @@ export const Homepage = () => {
         </div>
     );
 };
+/*
+<div class="spinner-border" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+
+ */
