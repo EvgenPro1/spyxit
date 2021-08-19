@@ -40,7 +40,7 @@
 
 .my-word{
   opacity: 0;
-  text-transform: capitalize;
+  text-transform: uppercase;
   transition: .5s;
 }
 
