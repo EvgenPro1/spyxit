@@ -37,8 +37,8 @@ export const Homepage = () => {
 
     const pageArr = tempArr.map((item, index) => <>
         <h1>player № {index+1} </h1>
-        <div className='border-primary p-3'>
-            <h2 className=''>Click me to show or hide </h2>
+        <div className=' p-3'>
+            <h2 className='border-primary'>Click me to show</h2>
             <h2 className='my-word'>{item}</h2>
         </div>
         </>)
@@ -51,8 +51,8 @@ export const Homepage = () => {
             </>}
             {!page &&
             <>
-                <input className='mt-2' type="number" value={number} onChange={(e) => setPlayersNum(e)}/>
-                <input className='mt-2' type="text" value={word} onChange={(e) => handleChangeWord(e)}/>
+                <input className='mt-2' placeholder='Enter number of players' type="number" value={number} onChange={(e) => setPlayersNum(e)}/>
+                <input className='mt-2' placeholder='Enter word' type="text" value={word} onChange={(e) => handleChangeWord(e)}/>
             </>
 
             }
