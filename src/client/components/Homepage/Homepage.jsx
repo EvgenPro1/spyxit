@@ -12,6 +12,7 @@ export const Homepage = () => {
     const [word, setWord] = useState('')
     const [page, setPage] = useState(0)
     const [spyIndex, setSpyIndex] = useState(0)
+    const [show, setShow] = useState()
 
     useEffect(()=>{
         setSpyIndex(getRandomIntInclusive(number))
@@ -37,8 +38,8 @@ export const Homepage = () => {
 
     const pageArr = tempArr.map((item, index) => <>
         <h1>player № {index+1} </h1>
-        <div className=' p-3'>
-            <h2 className='border-primary'>Click me to show</h2>
+        <div className='hovered p-3'>
+            <h2 className=''>Click me to show</h2>
             <h2 className='my-word'>{item}</h2>
         </div>
         </>)
@@ -61,6 +62,8 @@ export const Homepage = () => {
                 <button className='btn btn-outline-danger m-5' onClick={handleReset}>Reset</button>
 
             </div>
+            <div className='btn btn-outline-warning m-5' onClick={()=>setShow(!show)}>Show the topic</div>
+            {show && <h1 className='my-word show'>{word}</h1> }
         </div>
     );
 };

@@ -37,18 +37,19 @@
   }
 }
 
-.border-primary{
-  border: 1px solid black;
-}
 
 .my-word{
   opacity: 0;
-
   text-transform: capitalize;
   transition: .5s;
 }
 
+.my-word.show{
+  opacity: 1;
 
-.border-primary:hover .my-word{
+}
+
+
+.hovered:hover .my-word{
   opacity:1;
 }
